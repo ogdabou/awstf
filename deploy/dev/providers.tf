@@ -1,7 +1,6 @@
 terraform {
-
   backend "s3" {
-    bucket = "awstf-infra"
+    bucket = "awstf-infra-2"
     key    = "terraform/dev/state"
     region = "eu-west-1"
   }
@@ -15,5 +14,8 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "eu-west-1"
+  assume_role {
+    role_arn = "arn:aws:iam::654654272742:role/infra"
+  }
 }
