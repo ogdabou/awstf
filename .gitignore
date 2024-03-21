@@ -3,3 +3,5 @@ src/.terraform
 *.lock
 *.zip
 *.hcl
+src/aws
+.terraform
