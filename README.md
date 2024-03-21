@@ -37,6 +37,8 @@ terraform plan
 terraform apply
 ```
 
+## Achievements
+
 ### Terraform state
 
 The terraform state is store in a manually created s3 bucket.
@@ -53,19 +55,19 @@ They weren't that much of a problem but still took **me some good time**, for si
 
 ### [Current Struggle] The orchestrator
 
-1. Naively started with consul & nomad
-   2. Intended to create a [module](./src/modules/nomad) which requires Packer
-   3. I think I read [this doc](https://registry.terraform.io/modules/hashicorp/nomad/aws/latest/submodules/nomad-cluster) and looked at how to build this
-   3. I also tried [this example](https://github.com/hashicorp/terraform-aws-nomad/tree/master) which I removed from the source
-   4. I already experienced packer before, twice probably
-   5. Gave up on it after 30 minutes
-6. Started to look at EKS with [this module](./src/modules/learn-terraform-provision-eks-cluster)
-   7. Following hashicorp's documentation, but it failed
-6. Sarted to look at Superset in ECS, "why not use simple docker images" ?
-   7. The idea was to first [install ECS](https://spacelift.io/blog/terraform-ecs)
-   8. Then deploy a simple docker image
-   9. Intended to create a [module](./src/modules/superset)
-   10. Pushed manually the public **superset:1.4.0** docker image to ECR repository defined within terraform
+1. Naively started with consul & nomad  
+   1. Intended to create a [module](./src/modules/nomad) which requires Packer  
+   2. I think I read [this doc](https://registry.terraform.io/modules/hashicorp/nomad/aws/latest/submodules/nomad-cluster) and looked at how to build this  
+   3. I also tried [this example](https://github.com/hashicorp/terraform-aws-nomad/tree/master) which I removed from the source  
+   4. I already experienced packer before, twice probably  
+   5. Gave up on it after 30 minutes  
+2. Started to look at EKS with [this module](./src/modules/learn-terraform-provision-eks-cluster)  
+   1. Following hashicorp's documentation, but it failed  
+3. Sarted to look at Superset in ECS, "why not use simple docker images" ?  
+   1. The idea was to first [install ECS](https://spacelift.io/blog/terraform-ecs)  
+   2. Then deploy a simple docker image  
+   3. Intended to create a [module](./src/modules/superset)  
+   4. Pushed manually the public **superset:1.4.0** docker image to ECR repository defined within terraform  
 
 ### The big time wasters
 
